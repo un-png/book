@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqgc.dao.BookDao">
+
+    <select id="getBooks" resultType="com.cqgc.domain.Book">
+        select * from tbl_book
+        <where>
+            <if test="name != null and name != ''">
+                and name like CONCAT('%', #{name}, '%')
+            </if>
+            <if test="type != null and type != ''">
+                and type like CONCAT('%', #{type}, '%')
+            </if>
+        </where>
+    </select>
+</mapper>
