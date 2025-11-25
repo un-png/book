@@ -17,9 +17,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class TransferLogAop {
 
-
-    @Autowired
-    private TransferDao transferDao;
     @Autowired
     private TransferLogDao transferLogDao;
 
