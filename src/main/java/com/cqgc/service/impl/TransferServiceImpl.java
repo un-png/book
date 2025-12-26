@@ -31,11 +31,11 @@ public class TransferServiceImpl implements TransferService {
             throw new TransferException("转账金额有误");
         }
         transferDao.transfer(fromId,amount);
-        try {
-            int i = 1/0;
-        } catch (Exception e) {
-            throw new TransferException("转账失败");
-        }
+//        try {
+//            int i = 1/0;
+//        } catch (Exception e) {
+//            throw new TransferException("转账失败");
+//        }
         transferDao.receive(toId,amount);
 
         // 返回转账信息
